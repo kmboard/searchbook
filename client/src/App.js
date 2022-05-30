@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink  } from "@apollo/client";
 import { setContext } from '@apollo/client/link/context';
 
@@ -38,6 +38,7 @@ function App() {
     <Router>
       <>
         <Navbar />
+        <Routes>
         <Route>
           <Route 
             path='/' 
@@ -52,6 +53,7 @@ function App() {
             element={<h1 className='display-2'>Wrong page!</h1>}
           />
         </Route>
+        </Routes>
       </>
     </Router>
     </ApolloProvider>
